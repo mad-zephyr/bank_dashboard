@@ -1,5 +1,5 @@
 export enum RoutePath {
-  DASHBOARD = "",
+  DASHBOARD = "/",
   ANALYTIC = "analytic",
   LOGO = "logo",
   PAYMENT = "payment",
