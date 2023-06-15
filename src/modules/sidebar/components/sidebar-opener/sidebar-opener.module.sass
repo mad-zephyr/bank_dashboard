@@ -1,0 +1,51 @@
+
+.main
+  display: block
+  position: absolute
+  top: 12px
+  width: 24px
+  height: 24px
+  border: none
+  padding: 0
+  background: none
+  right: -36px
+  transition: 0.3s all ease-in-out
+  cursor: pointer
+
+  div
+    display: block
+    background: var(--color-blue-200)
+    widht: 100%
+    height: 3px
+    transition: 0.3s all ease-in-out
+
+  .one
+    transform: translateY(-4px)
+    transform-origin: top left
+
+  .two
+    transform: translateX(0px)
+
+  .three
+    transform: translateY(4px)
+    transform-origin: bottom left
+
+.close
+  right: 0px
+
+  .one
+    transform: translateY(-6px) rotateZ(45deg)
+
+  .two
+    transform: translateX(-20px)
+    opacity: 0 
+
+  .three
+    transform: translateY(4px) rotateZ(-45deg)
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+.main
+  width: 100%
+  min-height: 278px
+
+  & > div
+    height: 100%
+
+.header
+  display: flex
+  align-items: center
+  width: 100%
+  margin-bottom: 12px
+
+  h4
+    margin-right: 18px
+
+.btn_group
+  display: flex
+  align-items: center
+  flex-grow: 1 
+  justify-content: flex-end
+  column-gap: 8px
+
+  button
+    &:first-of-type
+      border: 1px solid var(--color-blue-50)
+
+    &:last-of-type
+      border: 1px solid var(--color-blue-200)
+
+.container
+  display: flex
+
+.description
+  margin-left: 36px
+  padding-left: 24px
+  border-left: 1px solid var(--color-blue-50)
+
+.group
+  display: flex
+  flex-direction: column
+  row-gap: 12px
+  margin-bottom: 32px
+
+  &_item
+    p
+      margin: 0
+      margin-bottom: 8px
+    span
+      font-size: var(--text-xl)
+      font-weight: 700
+
+

@@ -1,0 +1,37 @@
+
+.notification
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 40px
+  width: 40px
+  border-radius: 50%
+  border: 1px solid var(--color-blue-100)
+
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    width: 10px
+    height: 10px
+    right: 1px
+    top: 1px
+    border-radius: 50%
+    background: var(--color-accent)
+
+.group
+  display: flex
+  column-gap: 12px
+  align-items: center
+
+.user
+  display: flex
+  align-items: center
+
+  svg
+    margin-left: 12px
+
+  img
+    width: 48px
+    height: 48px

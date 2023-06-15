@@ -1,0 +1,64 @@
+
+.main 
+  list-style: none
+  min-height: 56px
+  padding-bottom: 12px
+  border-bottom: 1px solid var(--color-blue-50)
+  margin-bottom: 12px
+
+  &:last-of-type
+    border-bottom: 0px solid var(--color-blue-50)
+    margin-bottom: 0px
+    padding-bottom: 0
+
+.content
+  display: flex
+  flex-grow: 1
+  align-items: center
+
+
+.description
+  display: flex
+  flex-direction: column
+
+  span
+    &:first-of-type
+      font-weight: 500
+      font-size: var(--text-sm)
+      margin-bottom: 4px
+
+    &:last-of-type
+      color: var(--color-paragraph)
+      font-size: var(--text-xs)
+      
+.income
+  display: flex
+  align-items: center
+  align-content: flex-end
+  font-size: var(--text-sm)
+  flex-grow: 1
+  justify-content: flex-end
+
+  &_positive
+    color: var(--color-success)
+  
+  &_negative
+    color: var(--color-alert)
+
+.logo
+  height: 24px
+  width: auto
+
+.logo_wrapper
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 44px
+  height: 44px
+  border-radius: 4px
+  border: 1px solid var(--color-blue-50)
+  margin-right: 24px
+
+
+
+    

@@ -1,0 +1,78 @@
+
+.main
+  display: block
+  position: relative
+  z-index: 1
+
+  &::after
+    position: absolute
+    content: ''
+    display: block 
+    width: 291px
+    height: 170px
+    left: 59px
+    top: 14px
+
+    background: var(--color-blue-50)
+    border-radius: 12px
+    z-index: -1
+
+.wrapper
+  position: relative
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  width: 335px
+  height: 196px
+  padding: 24px 20px
+  background: var(--color-main)
+  border-radius: 12px
+
+  color: white
+
+.logo
+  width: 44px
+  height: 24px
+
+.decor_item1
+  position: absolute
+  width: 132.29px
+  height: 145px
+  left: 200px
+  top: -80px
+
+  background: linear-gradient(106.7deg, rgba(37, 0, 97, 0.85) 41.66%, rgba(71, 2, 184, 0.85) 109.55%)
+  border-radius: 16px
+  transform: rotate(45.17deg)
+
+.decor_item2
+  position: absolute
+  width: 120.15px
+  height: 135.76px
+  left: 230px
+  top: 10px
+
+  background: linear-gradient(220.9deg, #250061 36.93%, #4702B8 89.95%)
+  border-radius: 16px
+  transform: rotate(45.17deg)
+
+.decor_card_chip
+  position: absolute
+  left: 274px
+  top: 89px
+
+.description
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  justify-content: flex-end
+
+  p
+    &:first-of-type
+      margin: 0
+  
+    &:last-of-type
+      color: var(--color-white)
+      margin-bottom: 0
+
+
