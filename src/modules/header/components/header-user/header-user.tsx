@@ -14,7 +14,7 @@ export const HeaderUser: FC = () => {
       </div>
       <div className={style.user}>
         <Image src={UserPhoto} alt={"user"} />
-        <Icon icon={IconName.DOWN_ARROW} />
+        <Icon icon={IconName.ARROW_DOWN} />
       </div>
     </div>
   );
