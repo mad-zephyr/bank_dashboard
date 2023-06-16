@@ -4,17 +4,24 @@ import cn from "classnames";
 import style from "./buttom.module.sass";
 
 export const Button: FC<ButtonProps> = ({
-  iconPosition,
   size,
   variant,
   content,
-  icon,
+  postfix,
+  sufix,
+  className,
+  onClick,
 }) => {
   const textExist = !content;
 
+  const clickHandler = () => {
+    onClick && onClick();
+  };
+
   return (
     <button
-      className={cn(style.main, {
+      onClick={clickHandler}
+      className={cn(style.main, className, {
         [style.primary]: variant === "primary",
         [style.secondary]: variant === "secondary",
         [style.ghost]: variant === "ghost",
@@ -24,9 +31,9 @@ export const Button: FC<ButtonProps> = ({
         [style.compact]: textExist,
       })}
     >
-      {iconPosition === "left" && icon}
+      {sufix}
       {content && <span>{content}</span>}
-      {iconPosition === "right" && icon}
+      {postfix}
     </button>
   );
 };

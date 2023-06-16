@@ -18,6 +18,10 @@ import ArrowRight from "../images/arrow_right.svg";
 import ArrowLeft from "../images/arrow_left.svg";
 import Plus16 from "../images/plus_16.svg";
 import Dots from "../images/dots.svg";
+import Card from "../images/payment.svg";
+import Dollar from "../images/dollarcircle.svg";
+import Percent from "../images/percentage-filled.svg";
+import ArrowRightLong from "../images/arrow-right-linear.svg";
 
 const Icon: FC<IconsProps> = ({ icon, className }) => {
   switch (icon) {
@@ -71,6 +75,18 @@ const Icon: FC<IconsProps> = ({ icon, className }) => {
     }
     case IconName.DOTS: {
       return <Dots className={className} />;
+    }
+    case IconName.CARD: {
+      return <Card className={className} />;
+    }
+    case IconName.DOLLAR: {
+      return <Dollar className={className} />;
+    }
+    case IconName.PERCENT: {
+      return <Percent className={className} />;
+    }
+    case IconName.ARROW_RIGHT_LONG: {
+      return <ArrowRightLong className={className} />;
     }
     default: {
       return <></>;

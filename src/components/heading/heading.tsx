@@ -15,16 +15,14 @@ export const Heading = () => {
       <div className={style.right}>
         <Button
           content="Add Payment"
-          iconPosition="right"
           size="s"
           variant="secondary"
-          icon={<Icon icon={IconName.PLUS_16} />}
+          postfix={<Icon icon={IconName.PLUS_16} />}
         />
         <Button
-          iconPosition="right"
           size="s"
           variant="ghost"
-          icon={<Icon icon={IconName.DOTS} />}
+          postfix={<Icon icon={IconName.DOTS} />}
         />
       </div>
     </div>

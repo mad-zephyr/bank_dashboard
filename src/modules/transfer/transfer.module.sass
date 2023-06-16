@@ -27,3 +27,42 @@
     font-size: var(--text-xs)
     text-decoration: underline
     color: var(--color-paragraph)
+
+.form
+  &_badge
+    position: relative
+    display: flex
+    align-items: center
+    height: 28px
+    width: 28px
+    border-radius: 2px
+    justify-content: center
+    background: var(--color-accent-shadow)
+
+    svg
+      z-index: 1
+
+    &::after
+      content: ""
+      position: absolute
+      background: var(--color-accent)
+      width: 16px
+      height: 16px
+      border-radius: 50%
+      z-index: 0
+
+  &_footer
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: 24px
+
+.text_block
+  p
+    font-weight: 500
+
+    &:first-of-type
+      color: var(--color-main)
+    
+    &:last-of-type
+      line-height: 18px

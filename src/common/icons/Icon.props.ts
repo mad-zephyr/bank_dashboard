@@ -16,6 +16,10 @@ export enum IconName {
   ARROW_LEFT = "arrow_left",
   PLUS_16 = "plus_16",
   DOTS = "dots",
+  CARD = "card",
+  DOLLAR = "dollar",
+  PERCENT = "percent",
+  ARROW_RIGHT_LONG = "arrow right long",
 }
 
 export type IconsProps = {
