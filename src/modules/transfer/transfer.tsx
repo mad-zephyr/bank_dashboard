@@ -8,6 +8,7 @@ import Icon from "@/common/icons/icon";
 import { IconName } from "@/common/icons/Icon.props";
 
 export const Transfer: FC = () => {
+  const noop = (name: string, value: string) => {};
   return (
     <div className={style.main}>
       <Card size="m">
@@ -19,12 +20,17 @@ export const Transfer: FC = () => {
           </div>
         </div>
         <TransferList />
-
         <TransferInput
+          name=""
+          value=""
+          onChange={noop}
           sufix={<Icon icon={IconName.CARD} />}
           placeholder={"Card or phone"}
         />
         <TransferInput
+          name=""
+          value=""
+          onChange={noop}
           sufix={<Icon icon={IconName.DOLLAR} />}
           postfix={"USD"}
           placeholder={"Preferred ammount"}

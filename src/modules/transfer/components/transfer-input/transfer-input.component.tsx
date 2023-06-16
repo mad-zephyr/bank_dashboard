@@ -6,11 +6,11 @@ import { Ptag } from "@/components/ui";
 type TransferInputProps = {
   value: string;
   name: string;
-  onChange: (name: string, value: string) => {};
+  onChange: (name: string, value: string) => void;
   placeholder?: string;
   sufix?: ReactElement;
   postfix?: ReactElement | string;
-  error: boolean | string;
+  error?: boolean | string;
 };
 
 export const TransferInput: FC<TransferInputProps> = ({

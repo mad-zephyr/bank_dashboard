@@ -17,15 +17,13 @@ export const Wallet: FC = () => {
           <div className={style.btn_group}>
             <Button
               variant="ghost"
-              iconPosition="left"
+              sufix={<Icon icon={IconName.ARROW_LEFT} />}
               size="m"
-              icon={<Icon icon={IconName.ARROW_LEFT} />}
             />
             <Button
               variant="ghost"
-              iconPosition="left"
+              sufix={<Icon icon={IconName.ARROW_RIGHT} />}
               size="m"
-              icon={<Icon icon={IconName.ARROW_RIGHT} />}
             />
           </div>
         </div>
