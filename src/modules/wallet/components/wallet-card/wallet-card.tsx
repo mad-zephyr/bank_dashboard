@@ -12,6 +12,7 @@ import CardBgOne from "src/common/images/cards_bg/card_one.png";
 import CardBgTwo from "src/common/images/cards_bg/card_two.png";
 import CardBgThree from "src/common/images/cards_bg/card_three.png";
 import { generateRandom } from "@/common/helpers/helpers";
+import cn from "classnames";
 
 type WalletCardProps = {
   data: CardProps;
