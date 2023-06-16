@@ -1,21 +1,26 @@
 
 .main
   display: block
-  position: relative
-  z-index: 1
+  position: relative 
 
-  &::after
-    position: absolute
-    content: ''
-    display: block 
-    width: 291px
-    height: 170px
-    left: 59px
-    top: 14px
+  & + div 
+    background: var(--color-blue-50)!important
+    overflow: hidden
+    border-radius: 10px
+    z-index: 10  
 
-    background: var(--color-blue-50)
-    border-radius: 12px
-    z-index: -1
+  // &::after
+  //   position: absolute
+  //   content: ''
+  //   display: block 
+  //   width: 291px
+  //   height: 170px
+  //   left: 59px
+  //   top: 14px
+
+  //   background: var(--color-blue-50)
+  //   border-radius: 12px
+  //   z-index: -1
 
 .wrapper
   position: relative
@@ -24,15 +29,22 @@
   overflow: hidden
   width: 335px
   height: 196px
-  padding: 24px 20px
-  background: var(--color-main)
+  padding: 24px 20px 
   border-radius: 12px
-
   color: white
 
 .logo
-  width: 44px
+  align-self: end
+  width: auto
   height: 24px
+
+.decor_bg
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: -1
 
 .decor_item1
   position: absolute
@@ -66,6 +78,7 @@
   flex-direction: column
   flex-grow: 1
   justify-content: flex-end
+  text-align: left
 
   p
     &:first-of-type

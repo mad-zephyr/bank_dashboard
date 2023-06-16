@@ -1,5 +1,5 @@
 export type PtagProps = {
-  content: string;
+  content: string | number;
   size: "s" | "m" | "l";
   className?: string;
 };

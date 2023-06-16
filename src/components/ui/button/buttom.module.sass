@@ -18,6 +18,18 @@
 
 .ghost
   background: rgba(var(--color-main), 0 )
+  border: 1px solid var(--color-blue-200)
+  transition: 0.3s border, background ease-in-out
+
+  &:hover
+    border: 1px solid var(--color-blue-300)
+  
+  &:active
+    background: var(--color-blue-50)
+
+  &_disabled
+    border: 1px solid var(--color-blue-50) !important
+    background: rgba(var(--color-main), 0 )!important
 
 .size_l
   border-radius: 8px

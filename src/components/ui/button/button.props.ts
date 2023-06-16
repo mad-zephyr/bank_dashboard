@@ -8,4 +8,5 @@ export type ButtonProps = {
   content?: string;
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 };

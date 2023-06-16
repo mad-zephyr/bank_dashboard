@@ -11,6 +11,7 @@ export const Button: FC<ButtonProps> = ({
   sufix,
   className,
   onClick,
+  disabled = false,
 }) => {
   const textExist = !content;
 
@@ -28,6 +29,9 @@ export const Button: FC<ButtonProps> = ({
         [style.size_s]: size === "s",
         [style.size_m]: size === "m",
         [style.size_l]: size === "l",
+        [style.ghost_disabled]: disabled && variant === "ghost",
+        [style.secondary_disabled]: disabled && variant === "secondary",
+        [style.primary_disabled]: disabled && variant === "primary",
         [style.compact]: textExist,
       })}
     >
