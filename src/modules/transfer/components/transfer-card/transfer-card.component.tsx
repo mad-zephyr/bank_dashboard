@@ -42,6 +42,12 @@ export const TransferCard: FC<TransferCardProps> = ({
           type: "visa",
         };
       }
+      default: {
+        return {
+          src: VisaLogo,
+          type: "visa",
+        };
+      }
     }
   }, [data.IssuingNetwork]);
 

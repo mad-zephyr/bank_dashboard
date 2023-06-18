@@ -7,33 +7,29 @@ type SwitcherProps = {
   name: string;
   onClick: (name: string, checked: boolean) => void;
   content: string | ReactNode;
-  defaultChecked?: boolean;
+  checked: boolean;
   disabled?: boolean;
 };
 
 export const Switcher: FC<SwitcherProps> = ({
   name,
-  onClick,
   content,
-  defaultChecked = false,
+  checked,
   disabled = false,
+  onClick,
 }) => {
-  const [checked, setChecked] = useState(defaultChecked);
   const unchecked = !checked;
 
   const checkHandler = () => {
-    !disabled &&
-      setChecked((prevState) => {
-        const currentState = !prevState;
-        onClick(name, currentState);
-        return currentState;
-      });
+    console.log("SWITCHER CHECKED: ", checked);
+    onClick(name, checked);
   };
   return (
     <div className={style.main}>
-      <label htmlFor="switcher" onClick={checkHandler}>
+      <label htmlFor="switcher">
         <span>{content}</span>
         <div
+          onClick={checkHandler}
           className={cn(style.switcher, {
             [style.disabled]: disabled,
           })}

@@ -19,7 +19,6 @@ const AppContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const sidebarOpenHandler = () => {
     setIsOpen((prevState) => !prevState);
-    console.log(isOpen);
   };
   return (
     <AppContext.Provider

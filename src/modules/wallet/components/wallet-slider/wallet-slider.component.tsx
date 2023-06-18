@@ -42,7 +42,7 @@ export const WalletSlider: FC<WalletSliderProps> = ({
       >
         {cardsData.map((card) => (
           <SwiperSlide key={card.CardNumber}>
-            <WalletCard data={card} />
+            <WalletCard data={card} active={card.active} />
           </SwiperSlide>
         ))}
       </Swiper>

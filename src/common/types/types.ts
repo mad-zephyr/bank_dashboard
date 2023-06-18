@@ -1,8 +1,8 @@
 type IssuingNetwork = "VISA" | "MASTERCARD";
 
 type CardData = {
-  IssuingNetwork: IssuingNetwork;
-  CardNumber: number;
+  IssuingNetwork: string;
+  CardNumber: string;
   Bank: string;
   Name: string;
   Address: string;
@@ -11,8 +11,12 @@ type CardData = {
   CVV: number;
   Expiry: string;
   Pin: number;
+  active: boolean;
 };
 
-type CardProps = Pick<CardData, "IssuingNetwork" | "CardNumber" | "MoneyRange">;
+type CardProps = Pick<
+  CardData,
+  "IssuingNetwork" | "CardNumber" | "MoneyRange" | "active"
+>;
 
 export type { IssuingNetwork, CardData, CardProps };
