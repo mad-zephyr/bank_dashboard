@@ -1,20 +1,18 @@
 import { FC } from "react";
-import style from "./income.module.sass";
 import { Card } from "../card/card";
-import { Htag } from "@/components/ui/htag/htag";
+import incomeMock from "src/mock/incomeMock.json";
+import { IncomeCard } from "./components";
+
+import style from "./income.module.sass";
 
 export const Income: FC = () => {
   return (
     <div className={style.main}>
-      <Card size="s">
-        <>Income</>
-      </Card>
-      <Card size="s">
-        <>Income</>
-      </Card>
-      <Card size="s">
-        <>Income</>
-      </Card>
+      {incomeMock.map((data) => (
+        <Card size="s" key={data.title}>
+          <IncomeCard data={data} />
+        </Card>
+      ))}
     </div>
   );
 };

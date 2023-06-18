@@ -1,10 +1,10 @@
 import { FC } from "react";
 import style from "./transaction.module.sass";
 import { Card } from "../card/card";
-import { Htag } from "@/components/ui/htag/htag";
-import { Button, Ptag } from "@/components/ui";
-import { TransactionList } from "./components/transaction-list/transaction-list";
-import { TransactionCard } from "./components/transaction-card/transaction-card";
+
+import { Htag, Ptag } from "@/components/ui";
+import { TransactionCard, TransactionList } from "./components";
+import transaction from "src/mock/transactions.json";
 
 export const Transaction: FC = () => {
   return (
@@ -18,10 +18,9 @@ export const Transaction: FC = () => {
           </div>
         </div>
         <TransactionList>
-          <TransactionCard />
-          <TransactionCard />
-          <TransactionCard />
-          <TransactionCard />
+          {transaction.map((data) => {
+            return <TransactionCard key={data.name + data.date} data={data} />;
+          })}
         </TransactionList>
       </Card>
     </div>

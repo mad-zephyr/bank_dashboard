@@ -20,7 +20,6 @@ export const WalletSlider: FC<WalletSliderProps> = ({
       <Swiper
         grabCursor={true}
         effect={"creative"}
-        onChange={() => console.log("CHANGED")}
         spaceBetween={24}
         slidesPerView={"auto"}
         creativeEffect={{
@@ -40,8 +39,8 @@ export const WalletSlider: FC<WalletSliderProps> = ({
         modules={[EffectCreative, Navigation]}
         className={style.slider_wrapper}
       >
-        {cardsData.map((card) => (
-          <SwiperSlide key={card.CardNumber}>
+        {cardsData?.map((card) => (
+          <SwiperSlide key={card.CardNumber} className={style.card_wrapper}>
             <WalletCard data={card} active={card.active} />
           </SwiperSlide>
         ))}

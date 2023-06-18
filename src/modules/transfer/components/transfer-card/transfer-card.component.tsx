@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useMemo } from "react";
 
 import VisaLogo from "src/common/images/visa_logo_white.png";
 import MasterLogo from "src/common/images/mastercard.png";
@@ -8,18 +8,17 @@ import style from "./transfer-card.module.sass";
 import Image from "next/image";
 import { Ptag } from "@/components/ui";
 import { CardProps } from "@/common/types/types";
-import classNames from "classnames";
+import cn from "classnames";
 
 type TransferCardProps = {
   data: CardProps;
-  favorite?: boolean;
+  onSetFavorite: (cardNumber: string) => void;
 };
 
 export const TransferCard: FC<TransferCardProps> = ({
   data,
-  favorite = false,
+  onSetFavorite,
 }) => {
-  const [favoriteCard, setFavoriteCard] = useState(favorite);
   const availableAmount = data.MoneyRange?.slice(1);
   const amount = Number.isInteger(availableAmount)
     ? `${availableAmount}.00`
@@ -52,23 +51,21 @@ export const TransferCard: FC<TransferCardProps> = ({
   }, [data.IssuingNetwork]);
 
   const setFavoritehandler = () => {
-    setFavoriteCard((prevState) => !prevState);
+    onSetFavorite(data.CardNumber);
   };
 
   return (
     <div className={style.main}>
       <div
         onClick={setFavoritehandler}
-        className={classNames(style.card, {
+        className={cn(style.card, {
           [style.color_visa]: logo.type === "visa",
           [style.color_master]: logo.type === "master",
         })}
       >
-        {favoriteCard && (
-          <div className={style.star}>
-            <CheckedStar />
-          </div>
-        )}
+        <div className={cn(style.star, { [style.star_show]: data.favorite })}>
+          <CheckedStar />
+        </div>
         <Image src={logo.src} alt="logo" className={style.logo} />
       </div>
       <div className={style.detail}>

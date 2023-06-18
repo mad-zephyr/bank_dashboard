@@ -1,7 +1,9 @@
+@use 'src/styles/_index' as *
+
 .main
   position: fixed
   top: 0
-  width: 100%
+  width: calc(100% - 74px)
   background: var(--color-white)
   padding: 20px 24px 20px 64px
   border-bottom: 1px solid var(--color-blue-50)
@@ -20,5 +22,13 @@
   max-width: 1024px
   display: flex
   justify-content: space-between
+
+@media (max-width: $breakpoint_tablet)
+  .main
+    width: calc(100% - 74px)
+
+  .container
+    // max-width: auto
+
 
 

@@ -6,14 +6,14 @@ import "swiper/css";
 import style from "./transfer-list.module.sass";
 import { TransferCard } from "../transfer-card/transfer-card.component";
 
-import cardsMock from "src/mock/cardsMock.json";
-import { CardProps } from "@/common/types/types";
 import Icon from "@/common/icons/icon";
 import { IconName } from "@/common/icons/Icon.props";
 import { Button } from "@/components/ui";
+import { useCardsContext } from "@/common/store/wallet.context";
 
 export const TransferList: FC = () => {
   const [slider, setSlider] = useState<SwiperClass>();
+  const { cardsData, onSetFavoriteCard } = useCardsContext();
   return (
     <div className={style.main}>
       <div className={style.group}>
@@ -39,10 +39,10 @@ export const TransferList: FC = () => {
         className={style.main}
         onInit={(ev) => setSlider(ev)}
       >
-        {(cardsMock as unknown as CardProps[]).map((data) => {
+        {cardsData.map((data) => {
           return (
             <SwiperSlide key={data.CardNumber} style={{ width: "auto" }}>
-              <TransferCard data={data} />
+              <TransferCard data={data} onSetFavorite={onSetFavoriteCard} />
             </SwiperSlide>
           );
         })}

@@ -12,11 +12,12 @@ type CardData = {
   Expiry: string;
   Pin: number;
   active: boolean;
+  favorite: boolean;
 };
 
 type CardProps = Pick<
   CardData,
-  "IssuingNetwork" | "CardNumber" | "MoneyRange" | "active"
+  "IssuingNetwork" | "CardNumber" | "MoneyRange" | "active" | "favorite"
 >;
 
 export type { IssuingNetwork, CardData, CardProps };

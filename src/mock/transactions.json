@@ -1,0 +1,30 @@
+[
+  {
+    "image": "",
+    "name": "Netflix",
+    "date": 1680731160000,
+    "income": 15.49,
+    "trend": false
+  },
+  {
+    "image": "",
+    "name": "Spotify",
+    "date": 1678780920000,
+    "income": 135.25,
+    "trend": true
+  },
+  {
+    "image": "",
+    "name": "Figma",
+    "date": 1676921040000,
+    "income": 78.55,
+    "trend": false
+  },
+  {
+    "image": "",
+    "name": "Shopify",
+    "date": 1673072640000,
+    "income": 934.29,
+    "trend": true
+  }
+]

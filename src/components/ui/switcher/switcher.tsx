@@ -8,13 +8,13 @@ type SwitcherProps = {
   onClick: (name: string, checked: boolean) => void;
   content: string | ReactNode;
   checked: boolean;
-  disabled?: boolean;
+  disabled: boolean;
 };
 
 export const Switcher: FC<SwitcherProps> = ({
   name,
   content,
-  checked,
+  checked = false,
   disabled = false,
   onClick,
 }) => {

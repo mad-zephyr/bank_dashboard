@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { Card } from "../card/card";
 import style from "./wallet.module.sass";
 import { Htag } from "@/components/ui/htag/htag";
@@ -50,9 +50,12 @@ export const Wallet: FC = () => {
       }));
 
       setLastSlide(isEnd);
-      setCurentCard(cardsData[activeIndex]);
     });
   }, [cardsData, slider]);
+
+  useEffect(() => {
+    setCurentCard(cardsData[activeCardIndex]);
+  }, [cardsData, activeCardIndex]);
 
   useEffect(() => {
     const node = nodeRef.current;
@@ -116,6 +119,7 @@ export const Wallet: FC = () => {
               content={<Ptag content="Deactivate card" size={"m"} />}
               name={curentCard?.CardNumber}
               checked={curentCard?.active}
+              disabled={false}
               onClick={() => onDeactivateCard(curentCard.CardNumber)}
             />
           </div>

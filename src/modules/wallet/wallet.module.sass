@@ -1,9 +1,14 @@
+@use 'src/styles/_index' as *
+
 .main
   width: 100%
   min-height: 278px
 
   & > div
     height: 100%
+
+.container
+  display: flex
 
 .header
   display: flex
@@ -20,10 +25,6 @@
   flex-grow: 1 
   justify-content: flex-end
   column-gap: 8px
-
-
-.container
-  display: flex
 
 .description
   padding-left: 24px
@@ -44,4 +45,4 @@
       font-size: var(--text-xl)
       font-weight: 700
 
-
+@media (max-width: $breakpoint_tablet)

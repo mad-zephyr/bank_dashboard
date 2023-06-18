@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Total Income",
+    "amount": 974.99,
+    "period": "from last week",
+    "trend": true,
+    "percent": 7.85
+  },
+  {
+    "title": "Total Expence",
+    "amount": 425.3,
+    "period": "from last week",
+    "trend": false,
+    "percent": 22.3
+  },
+  {
+    "title": "Total Savings",
+    "amount": 549.61,
+    "period": "from last week",
+    "trend": true,
+    "percent": 9.5
+  }
+]

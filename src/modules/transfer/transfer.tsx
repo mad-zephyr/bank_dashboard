@@ -3,12 +3,13 @@ import style from "./transfer.module.sass";
 import { Card } from "../card/card";
 import { Htag } from "@/components/ui/htag/htag";
 import { Button, Ptag } from "@/components/ui";
-import { TransferCard, TransferInput, TransferList } from "./components";
+import { TransferInput, TransferList } from "./components";
 import Icon from "@/common/icons/icon";
 import { IconName } from "@/common/icons/Icon.props";
 
 export const Transfer: FC = () => {
   const noop = (name: string, value: string) => {};
+
   return (
     <div className={style.main}>
       <Card size="m">

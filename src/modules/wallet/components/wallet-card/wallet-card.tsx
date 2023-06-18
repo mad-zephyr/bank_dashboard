@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useMemo } from "react";
 
 import style from "./wallet-card.module.sass";
 import Image from "next/image";

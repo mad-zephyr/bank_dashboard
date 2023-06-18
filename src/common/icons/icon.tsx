@@ -22,6 +22,8 @@ import Card from "../images/payment.svg";
 import Dollar from "../images/dollarcircle.svg";
 import Percent from "../images/percentage-filled.svg";
 import ArrowRightLong from "../images/arrow-right-linear.svg";
+import PositiveTrendIcon from "../images/positive_trend.svg";
+import NegativeTrendIcon from "../images/negative_trend.svg";
 
 const Icon: FC<IconsProps> = ({ icon, className }) => {
   switch (icon) {
@@ -87,6 +89,12 @@ const Icon: FC<IconsProps> = ({ icon, className }) => {
     }
     case IconName.ARROW_RIGHT_LONG: {
       return <ArrowRightLong className={className} />;
+    }
+    case IconName.NEGATIVE_TREND: {
+      return <NegativeTrendIcon className={className} />;
+    }
+    case IconName.POSITIVE_TREND: {
+      return <PositiveTrendIcon className={className} />;
     }
     default: {
       return <></>;

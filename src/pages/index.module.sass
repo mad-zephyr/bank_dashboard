@@ -1,7 +1,8 @@
+@use 'src/styles/_index' as *
+
 .main
-  width: 100%
   background: var(--color-bg)
-  max-width: 1024px
+  max-width: 1032px 
   width: 100%
   
 .container
@@ -12,15 +13,33 @@
 .left
   display: flex
   flex-direction: column
-  max-width: 603px
+  max-width: 604px
+  width: 100%
   column-gap: 14px
   row-gap: 14px
 
 .right
   display: flex
   flex-direction: column
-  max-width: 603px
+  max-width: 416px
   width: 100%
   column-gap: 14px
   row-gap: 14px
-  
+ 
+@media (max-width: $breakpoint_tablet)
+
+  .main
+    width: calc(100% - 24px)
+
+  .container
+    max-width: 100%
+    flex-wrap: wrap
+
+  .left
+    max-width: 100%
+    width: 100%
+
+  .right
+    max-width: 100%
+    width: 100%
+    flex-direction: row

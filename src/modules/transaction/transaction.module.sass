@@ -1,3 +1,5 @@
+@use 'src/styles/_index' as *
+
 .main
   width: 100%
   min-height: 326px
@@ -30,3 +32,7 @@
 .container
   display: flex
   flex-grow: 1
+
+@media (max-width: $breakpoint_tablet)
+  .main
+    width: calc(50% - 7px)

@@ -20,6 +20,8 @@ export enum IconName {
   DOLLAR = "dollar",
   PERCENT = "percent",
   ARROW_RIGHT_LONG = "arrow right long",
+  POSITIVE_TREND = "positive trend",
+  NEGATIVE_TREND = "negative trend",
 }
 
 export type IconsProps = {
