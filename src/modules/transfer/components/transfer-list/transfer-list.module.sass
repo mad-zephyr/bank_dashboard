@@ -1,3 +1,4 @@
+@use 'src/styles/_index' as *
 .main
   position: relative
   overflow: hidden
@@ -35,4 +36,9 @@
 
       svg 
         stroke: var(--color-white)
+
+@media (max-width: $breakpoint_tablet)
+  .main
+    // max-width: unset
+    // width: 100%
       

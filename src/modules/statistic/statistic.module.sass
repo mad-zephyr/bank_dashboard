@@ -1,6 +1,12 @@
+@use 'src/styles/_index' as *
+
 .main
   width: 100%
   min-height: 341px
 
   div
     height: 100%
+
+@media (max-width: $breakpoint_tablet)
+  .main 
+    min-height: auto
