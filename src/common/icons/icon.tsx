@@ -24,6 +24,7 @@ import Percent from "../images/percentage-filled.svg";
 import ArrowRightLong from "../images/arrow-right-linear.svg";
 import PositiveTrendIcon from "../images/positive_trend.svg";
 import NegativeTrendIcon from "../images/negative_trend.svg";
+import Mobile_menu from "../images/burger.svg";
 
 const Icon: FC<IconsProps> = ({ icon, className }) => {
   switch (icon) {
@@ -95,6 +96,9 @@ const Icon: FC<IconsProps> = ({ icon, className }) => {
     }
     case IconName.POSITIVE_TREND: {
       return <PositiveTrendIcon className={className} />;
+    }
+    case IconName.MOBILE_MENU: {
+      return <Mobile_menu className={className} />;
     }
     default: {
       return <></>;

@@ -67,7 +67,13 @@
     &:last-of-type
       line-height: 18px
 
-@media (max-width: $breakpoint_tablet)
+@media (max-width: $breakpoint_tablet) 
   .main
+    flex-grow: 1
     width: calc(50% - 7px)
+
+@media (max-width: $breakpoint_mobile)
+   .main
+    flex-grow: 1
+    width: 100%
     

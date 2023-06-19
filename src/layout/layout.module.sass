@@ -5,7 +5,7 @@
   background: var(--color-bg)
 
 .content
-  padding-right: 24px
+  
 
 .wrapper
   padding: var(--space-xxl) 0 var(--space-xxl) var(--space-xxxl)
@@ -18,8 +18,20 @@
 @media (max-width: $breakpoint_tablet)
   .wrapper
     padding: var(--space-xxl) 0 var(--space-xxl) var(--space-xl)
-
     
+@media (max-width: $breakpoint_mobile)
+  .main
+    position: relative
+
+  .wrapper
+    width: 100%
+    padding: var(--space-xxl) 24px var(--space-xxl)
+    margin: 89px 0 0 0
+
+  .content
+    width: 100%
+    padding: 0
+    background: var(--color-bg)
  
     
 

@@ -46,3 +46,28 @@
       font-weight: 700
 
 @media (max-width: $breakpoint_tablet)
+
+@media (max-width: $breakpoint_mobile)
+  .container
+    flex-direction: column
+
+  .description
+    display: flex
+    align-items: flex-start
+    padding: 0 24px
+    border-left: 0
+
+    p
+      margin: 0px
+      margin-bottom: 8px
+
+  .group
+    display: flex
+    flex-direction: row
+    flex-grow: 1
+    column-gap: 14px
+    margin-bottom: 0px
+
+    &_item
+      &:nth-of-type(1) 
+        min-width: 160px

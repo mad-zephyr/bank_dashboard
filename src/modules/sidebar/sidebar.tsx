@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import style from "./sidebar.module.sass";
 
 import SidebarLogo from "./components/sidebar-logo/sidebar-logo";
@@ -6,10 +6,8 @@ import SidebarNav from "./components/sidebar-list/components/sidebar-list-naviga
 import SidebarList from "./components/sidebar-list/sidebar-list";
 import { IconName } from "@/common/icons/Icon.props";
 import { RoutePath } from "@/common/constants";
-import Close from "src/common/images/close.svg";
 import cn from "classnames";
 import { useAppContext } from "@/common/store/app.context";
-import Icon from "@/common/icons/icon";
 import { SidebarOpener } from "./components/sidebar-opener/sidebar-opener";
 import { SidebarAccount } from "./components/sidebar-account/sidebar-account";
 

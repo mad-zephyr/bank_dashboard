@@ -1,3 +1,4 @@
+@use 'src/styles/_index' as *
 
 .main
   display: block
@@ -69,7 +70,9 @@
 .decor_card_chip
   position: absolute
   left: 274px
-  top: 89px
+  top: 80px
+  width: 39px
+  height: 26px
 
 .description
   display: flex
@@ -87,4 +90,24 @@
       margin-bottom: 0
       direction: ltr
 
+@media (max-width: $breakpoint_mobile)
+  .main
+    display: block
+    width: 100%
 
+  .wrapper
+    position: relative
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    width: calc(100% - 20px)
+    height: auto
+    aspect-ratio: 1.75
+  
+  .decor_card_chip
+    position: absolute
+    right: 40px
+    top: 89px
+    width: 50px
+
+    

@@ -11,3 +11,15 @@
 
 
 @media (max-width: $breakpoint_tablet)
+
+@media (max-width: $breakpoint_mobile)
+  .slider
+    width: 100%
+    overflow: hidden
+    margin-bottom: 24px
+
+    &_wrapper
+      overflow: revert!important
+      width: calc(100% - 36px)
+      margin: 0!important
+      

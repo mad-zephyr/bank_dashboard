@@ -1,3 +1,4 @@
+@use 'src/styles/_index' as *
 
 .main
   display: block
@@ -42,6 +43,11 @@
 
   .three
     transform: translateY(4px) rotateZ(-45deg)
+
+@media (max-width: $breakpoint_mobile)
+  // .main
+  //   right: calc(-100vw - 48px)
+  //   top: 30px
 
 
 

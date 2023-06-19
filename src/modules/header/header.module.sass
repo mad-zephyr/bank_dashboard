@@ -23,12 +23,29 @@
   display: flex
   justify-content: space-between
 
+.meneOpener
+  display: none
+
 @media (max-width: $breakpoint_tablet)
   .main
-    width: calc(100% - 74px)
+    width: -webkit-fill-available
 
   .container
-    // max-width: auto
+
+@media (max-width: $breakpoint_mobile)
+  .main
+    width: 100%
+    margin-left: 0px
+    padding: 20px 24px
+
+  .group
+    display: flex
+    column-gap: 14px
+    align-items: center
+
+  .meneOpener
+    display: unset
+    border: 0px
 
 
 

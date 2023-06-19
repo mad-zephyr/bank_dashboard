@@ -1,3 +1,5 @@
+@use 'src/styles/_index' as *
+
 .main
   position: fixed
   display: flex
@@ -11,3 +13,13 @@
   
 .collapsed
   max-width: 74px
+
+@media (max-width: $breakpoint_mobile)
+  .main
+    position: absolute
+    max-width: 100vw
+    height: 100dvh
+
+  .collapsed
+    width: 0px
+    left: -74px

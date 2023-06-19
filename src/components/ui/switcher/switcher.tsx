@@ -21,7 +21,6 @@ export const Switcher: FC<SwitcherProps> = ({
   const unchecked = !checked;
 
   const checkHandler = () => {
-    console.log("SWITCHER CHECKED: ", checked);
     onClick(name, checked);
   };
   return (

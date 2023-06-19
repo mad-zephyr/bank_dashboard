@@ -22,6 +22,7 @@ export enum IconName {
   ARROW_RIGHT_LONG = "arrow right long",
   POSITIVE_TREND = "positive trend",
   NEGATIVE_TREND = "negative trend",
+  MOBILE_MENU = "mobile menu",
 }
 
 export type IconsProps = {
