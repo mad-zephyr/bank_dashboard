@@ -1,0 +1,21 @@
+@use 'src/styles/_index' as *
+
+.main
+  display: flex
+  align-items: center
+  text-decoration: none 
+  transition: 0.3s all ease-in-out
+
+  svg
+    stroke: var(--color-white)
+    fill: var(--color-main)
+
+.title 
+  font-weight: 700
+  font-size: var(--text-lg)
+  color: var(--color-main)
+  transition: 0.3s all ease-in-out
+
+
+@media (max-width: $breakpoint_mobile)
+

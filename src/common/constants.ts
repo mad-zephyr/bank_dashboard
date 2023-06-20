@@ -9,3 +9,8 @@ export enum RoutePath {
   HELP = "help",
   SETTINGS = "settigns",
 }
+
+export enum Breakpoint {
+  TABLET = 996,
+  MOBILE = 678,
+}

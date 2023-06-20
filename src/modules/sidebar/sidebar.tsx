@@ -1,15 +1,16 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import style from "./sidebar.module.sass";
 
 import SidebarLogo from "./components/sidebar-logo/sidebar-logo";
 import SidebarNav from "./components/sidebar-list/components/sidebar-list-navigation/sidebar-list-navigation";
 import SidebarList from "./components/sidebar-list/sidebar-list";
 import { IconName } from "@/common/icons/Icon.props";
-import { RoutePath } from "@/common/constants";
+import { Breakpoint, RoutePath } from "@/common/constants";
 import cn from "classnames";
 import { useAppContext } from "@/common/store/app.context";
 import { SidebarOpener } from "./components/sidebar-opener/sidebar-opener";
 import { SidebarAccount } from "./components/sidebar-account/sidebar-account";
+import { useWindowSize } from "usehooks-ts";
 
 type SideBarlinkProp = {
   icon: IconName;
@@ -33,7 +34,16 @@ const secondlinks: SideBarlinkProp[] = [
 
 const Sidebar: FC = () => {
   const { isSidebarOpen } = useAppContext();
+  const { width } = useWindowSize();
   const isSidebarClosed = !isSidebarOpen;
+
+  useEffect(() => {
+    if (window !== undefined && width <= Breakpoint.MOBILE && isSidebarOpen) {
+      window.document.body.style.overflow = "hidden";
+    } else {
+      window.document.body.style.overflow = "";
+    }
+  }, [width, isSidebarOpen]);
 
   return (
     <nav className={cn(style.main, { [style.collapsed]: isSidebarClosed })}>
