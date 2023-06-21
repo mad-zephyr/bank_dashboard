@@ -1,4 +1,11 @@
-import { FC, ReactNode, createContext, useContext, useState } from "react";
+import {
+  FC,
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
 
 type AppContextProps = {
   isSidebarOpen: boolean;
@@ -6,7 +13,7 @@ type AppContextProps = {
 };
 
 const AppContextDefault: AppContextProps = {
-  isSidebarOpen: true,
+  isSidebarOpen: false,
   openSidebar: () => {},
 };
 
@@ -17,9 +24,10 @@ export const useAppContext = () => useContext(AppContext);
 const AppContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const sidebarOpenHandler = () => {
+  const sidebarOpenHandler = useCallback(() => {
     setIsOpen((prevState) => !prevState);
-  };
+  }, []);
+
   return (
     <AppContext.Provider
       value={{

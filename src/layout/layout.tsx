@@ -18,7 +18,9 @@ export default function Layout({ children }: LayoutProps) {
       <div className={style.content}>
         <Header />
         <main
-          className={cn(style.wrapper, { [style.wrapper_open]: isSidebarOpen })}
+          className={cn(style.wrapper, {
+            [style.wrapper_open]: !isSidebarOpen,
+          })}
         >
           {children}
         </main>

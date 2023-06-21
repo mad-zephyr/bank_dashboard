@@ -7,10 +7,14 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
 import { useAppContext } from "@/common/store/app.context";
+import { useWindowSize } from "usehooks-ts";
+import { Breakpoint } from "@/common/constants";
 
 const SidebarNav: FC<SideBarProps> = ({ href, iconName, text }) => {
-  const { isSidebarOpen } = useAppContext();
-  const isSidebarClosed = !isSidebarOpen;
+  const { isSidebarOpen, openSidebar } = useAppContext();
+  const { width } = useWindowSize();
+  const isMobile = useMemo(() => width <= Breakpoint.MOBILE, [width]);
+
   const router = useRouter();
 
   const isCurrentPage = useMemo(
@@ -19,12 +23,12 @@ const SidebarNav: FC<SideBarProps> = ({ href, iconName, text }) => {
   );
 
   return (
-    <li>
+    <li role="button" onClick={() => isMobile && openSidebar()}>
       <Link
         href={href}
         className={cn(style.main, {
           [style.main_active]: isCurrentPage,
-          [style.main_collapsed]: isSidebarClosed,
+          [style.main_collapsed]: isSidebarOpen,
         })}
       >
         <div
@@ -36,9 +40,7 @@ const SidebarNav: FC<SideBarProps> = ({ href, iconName, text }) => {
           icon={iconName}
           className={cn({ [style.icon_active]: isCurrentPage })}
         />
-        <div
-          className={cn(style.title, { [style.title_hide]: isSidebarClosed })}
-        >
+        <div className={cn(style.title, { [style.title_hide]: isSidebarOpen })}>
           {text}
         </div>
       </Link>

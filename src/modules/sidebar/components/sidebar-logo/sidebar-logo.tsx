@@ -8,17 +8,14 @@ import { useAppContext } from "@/common/store/app.context";
 
 const SidebarLogo = () => {
   const { isSidebarOpen } = useAppContext();
-  const isSidebarClosed = !isSidebarOpen;
 
   return (
     <Link
       href={"/"}
-      className={cn(style.main, { [style.main_collapsed]: isSidebarClosed })}
+      className={cn(style.main, { [style.main_collapsed]: isSidebarOpen })}
     >
       <Icon icon={IconName.LOGO} />
-      <div
-        className={cn(style.title, { [style.title_hidden]: isSidebarClosed })}
-      >
+      <div className={cn(style.title, { [style.title_hidden]: isSidebarOpen })}>
         InvestBank
       </div>
     </Link>

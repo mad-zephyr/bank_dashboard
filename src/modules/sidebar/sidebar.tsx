@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useMemo } from "react";
 import style from "./sidebar.module.sass";
 
 import SidebarLogo from "./components/sidebar-logo/sidebar-logo";
@@ -18,7 +18,7 @@ type SideBarlinkProp = {
   text: string;
 };
 
-const mainlinks: SideBarlinkProp[] = [
+const navLinks: SideBarlinkProp[] = [
   { icon: IconName.DASHBOARD, href: RoutePath.DASHBOARD, text: "dashboard" },
   { icon: IconName.ANALYTIC, href: RoutePath.ANALYTIC, text: "analytics" },
   { icon: IconName.PAYMENT, href: RoutePath.PAYMENT, text: "payments" },
@@ -35,22 +35,25 @@ const secondlinks: SideBarlinkProp[] = [
 const Sidebar: FC = () => {
   const { isSidebarOpen } = useAppContext();
   const { width } = useWindowSize();
-  const isSidebarClosed = !isSidebarOpen;
+
+  const isMobile = useMemo(() => width <= Breakpoint.MOBILE, [width]);
 
   useEffect(() => {
-    if (window !== undefined && width <= Breakpoint.MOBILE && isSidebarOpen) {
+    if (isMobile && !isSidebarOpen) {
       window.document.body.style.overflow = "hidden";
     } else {
       window.document.body.style.overflow = "";
     }
-  }, [width, isSidebarOpen]);
+  }, [isMobile, isSidebarOpen]);
 
   return (
-    <nav className={cn(style.main, { [style.collapsed]: isSidebarClosed })}>
-      <SidebarOpener />
-      <SidebarLogo />
+    <nav className={cn(style.main, { [style.collapsed]: isSidebarOpen })}>
+      <div className={style.header}>
+        <SidebarLogo />
+        <SidebarOpener />
+      </div>
       <SidebarList divider>
-        {mainlinks.map((link) => (
+        {navLinks.map((link) => (
           <SidebarNav
             key={link.href}
             href={link.href}

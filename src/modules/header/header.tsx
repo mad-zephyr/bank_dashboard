@@ -18,7 +18,7 @@ const Header = () => {
   const isMobile = useMemo(() => width <= Breakpoint.MOBILE, [width]);
 
   return (
-    <div className={cn(style.main, { [style.main_open]: isSidebarOpen })}>
+    <div className={cn(style.main, { [style.main_closed]: !isSidebarOpen })}>
       <div className={style.container}>
         {isMobile && <HeaderMobileLogo />}
         {!isMobile && <SearchInput className={style.searchInput} />}

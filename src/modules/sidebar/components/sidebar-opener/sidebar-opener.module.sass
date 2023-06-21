@@ -1,17 +1,35 @@
 @use 'src/styles/_index' as *
 
+.content
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 36px
+  height: 100%
+  transform: translateX(0px)
+  transition: 0.3s transform ease-in-out
+
+.sidebar
+
+  &_closed
+    transform: translateX(36px)
+
+  &_hidden
+    display: none
+
 .main
   display: block
-  position: absolute
-  top: 12px
+  justify-content: center
+  align-items: center
   width: 24px
   height: 24px
   border: none
   padding: 0
   background: none
-  right: -36px
+
   transition: 0.3s all ease-in-out
   cursor: pointer
+  z-index: 2
 
   div
     display: block

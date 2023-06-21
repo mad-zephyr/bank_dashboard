@@ -8,20 +8,17 @@ import { useAppContext } from "@/common/store/app.context";
 
 export const SidebarAccount: FC = () => {
   const { isSidebarOpen } = useAppContext();
-  const isSidebarCollapsed = !isSidebarOpen;
 
   return (
-    <div
-      className={cn(style.main, { [style.main_collapsed]: isSidebarCollapsed })}
-    >
+    <div className={cn(style.main, { [style.main_collapsed]: isSidebarOpen })}>
       <Image src={UserImage} alt="avatar" />
       <div
         className={cn(style.content, {
-          [style.content_collapsed]: isSidebarCollapsed,
+          [style.content_collapsed]: isSidebarOpen,
         })}
       >
         <div className={style.name}>
-          {isSidebarCollapsed ? "Profile" : "Anna Karin"}
+          {isSidebarOpen ? "Profile" : "Anna Karin"}
         </div>
         <div className={style.mail}>annakarin@gmail.com</div>
       </div>

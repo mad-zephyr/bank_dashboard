@@ -10,6 +10,16 @@
   background: var(--color-main)
   z-index: 10
   transition: 0.3s max-width ease-in-out
+
+.header
+  display: flex
+  justify-content: space-between
+  width: 100%
+  border-bottom: 1px solid var(--color-blue-500)
+
+.footer
+  position: fixed
+  bottom: 0
   
 .collapsed
   max-width: 74px
@@ -23,4 +33,4 @@
 
   .collapsed
     width: 0px
-    left: -74px
+    left: -80px
